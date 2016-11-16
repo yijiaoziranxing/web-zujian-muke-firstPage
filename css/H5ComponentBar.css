@@ -1,0 +1,62 @@
+/**散点图样式*/
+.h5_component_bar{
+
+}
+.h5_component_bar .line{
+    height: 15px;
+    font-size: 12px;
+    line-height: 15px;
+    margin-bottom: 15px;
+
+
+}
+.h5_component_bar .name{
+
+    width: 60px;
+    float: left;
+    color: #000;
+    text-align: center;
+
+}
+.h5_component_bar .rate{
+    width: 0px;/*本来是100px ，为了入场动画**/
+    display: block;
+    background-color: #ddd;
+    height: 15px;
+    margin-left:5px;
+    float: left;
+    position: relative;
+}
+.h5_component_bar .rate .bg{
+    background: #99c0ff;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0%;
+    right: 0;
+}
+.h5_component_bar .per{
+    width: 20px;
+    color: #99c0ff;
+    margin-left: 5px;
+    float: left;
+    -webkit-opacity:0;/**为了入场时动画，先不显示*/
+}
+.h5_component_bar_load .rate {
+    -webkit-transition: all 2s .5s;
+    width: 100px; !important;
+/*我表示很无奈，bg跟着rate动的，有2个方法可以改动画，
+ 1：改上面的rate 颜色为白色。
+ 2：bg不放在rate中，设置样式bg在rate上面，完全覆盖。
+*/
+}
+.h5_component_bar_leave .rate {
+    width: 0; !important;
+}
+.h5_component_bar_load .per{
+    -webkit-transition: all 2s 1.5s;
+    -webkit-opacity:1;
+}
+.h5_component_bar_leave .per{
+    -webkit-opacity:0;
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+    <!--<link rel="stylesheet" href="http://cdn.dowebok.com/77/css/jquery.fullPage.css">-->
+    <title>慕课网2015课程学习情况</title>
+
+    <style type="text/css">
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            font-size: 12px;
+        }
+
+        .iphone{
+            width: 340px;
+            height: 540px;
+            background-color: #fff;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -270px 0 0 -170px;
+
+        }
+
+    </style>
+    <script src="http://cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+
+    <script type="text/javascript" src="../js/H5ComponentBase.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/H5ComponentBase.css">
+
+    <link rel="stylesheet" type="text/css" href="H5ComponentPie.css">
+    <script type="text/javascript" src="H5ComponentPie.js"></script>
+
+
+    <body>
+        <!-- 用于开发测试 H5ComponentBase 对象（基本的图文组件） -->
+        <div class="iphone">
+
+        </div>
+
+        <script type="text/javascript">
+            var cfg={
+                type:'pie',
+                width:400,
+                height:400,
+                data:[
+//                       [ 'a项',  .5 ,'green'],
+                       [ 'a项',  .5 ],
+                       [ 'b项',  .2],
+
+                       [ 'c项',  .2],
+                       [ 'd项',  .05],
+                       [ 'e项',  .05]
+                ],
+                css:{
+//                    bottom:0,
+                    top:200
+//                    opacity:0
+                },
+//                animateIn: {
+//                    bottom:80,
+//                    opacity:1
+//                },
+//                animateOut:{
+//                    bottom:0,
+//                    opacity:0
+//                },
+
+                center:true,
+
+            }
+             var h5= new H5ComponentPie('myName',cfg)
+            $('.iphone').append(h5);
+ //为了方便测试写下面的代码
+            var leave=true;
+            $('body').click(function(){
+                leave=!leave;
+                $('.h5_component').trigger(leave ? 'onLeave': 'onLoad' )
+            })
+
+
+        </script>
+
+    </body>
+
+</html>
